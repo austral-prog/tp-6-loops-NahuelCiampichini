@@ -12,7 +12,15 @@ def put(value, lst):
         put("Blue", colors) -> 1
         # colors ahora es ["Red", "Blue", "Green"]
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    if "" in lst:
+        for indice, val in enumerate(lst):
+            if val == "":
+                lst[indice] = value
+                return indice
+    else:
+        return -1
+
+
 
 
 def remove(value, lst):
@@ -26,4 +34,12 @@ def remove(value, lst):
         remove("Red", colors) -> 2
         # colors ahora es ["", "Green", "", "Blue"]
     """
-    return "ANSWER HERE"  # Remove this line and implement
+    elim = 0
+    if value in lst:
+        for indice, val in enumerate(lst):
+            if val == value:
+                lst[indice] = ""
+                elim += 1
+        return elim
+    else:
+        return elim
